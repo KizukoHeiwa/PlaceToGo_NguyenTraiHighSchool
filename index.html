@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Trai Highschool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      .modal {
+        transition: opacity 0.3s ease;
+      }
+      .modal-content {
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+      .modal.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .modal.active .modal-content {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+      <div class="container mx-auto px-4 py-6">
+        <div class="flex justify-between items-center">
+          <h1 class="text-3xl font-bold text-indigo-600"><img src="" alt="Logo"></h1>
+          <!-- <nav class="hidden md:block">
+            <ul class="flex space-x-6">
+              <li><a href="#" class="text-gray-700 hover:text-indigo-600">Home</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-indigo-600">Destinations</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-indigo-600">About</a></li>
+              <li><a href="#" class="text-gray-700 hover:text-indigo-600">Contact</a></li>
+            </ul>
+          </nav>
+          <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-2xl"></i>
+          </button> -->
+        </div>
+      </div>
+    </header>
+  
+    <!-- Hero Section -->
+    <section class="relative h-96 overflow-hidden">
+      <!-- background-image-keyword: mountain landscape; background-image-color: blue -->
+      <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 opacity-90"></div>
+      <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+        <div class="text-white max-w-3xl">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Discover Hidden Gems Around the World</h2>
+          <p class="text-xl mb-8">Join me on my journey to explore the most breathtaking destinations on Earth</p>
+          <!-- <button class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-indigo-100 transition">Start Exploring</button> -->
+        </div>
+      </div>
+    </section>
+  
+    <!-- Blog Posts -->
+    <section class="container mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">All Travel Stories</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Blog Post 1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer" onclick="openModal('modal1')">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Swiss Alps" class="w-full h-48 object-cover" data-image-keyword="swiss alps mountains" data-image-color="blue">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <i class="fas fa-calendar-alt mr-2"></i>
+              <span>May 15, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">Hiking the Swiss Alps</h3>
+            <p class="text-gray-600 mb-4">Discover the breathtaking beauty of the Swiss Alps through this unforgettable hiking adventure.</p>
+            <div class="flex items-center text-indigo-600 font-medium">
+              <span>Read More</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Blog Post 2 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer" onclick="openModal('modal2')">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4" alt="Bali Beaches" class="w-full h-48 object-cover" data-image-keyword="bali beach tropical" data-image-color="blue">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <i class="fas fa-calendar-alt mr-2"></i>
+              <span>April 22, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">Paradise Found in Bali</h3>
+            <p class="text-gray-600 mb-4">Exploring the hidden beaches and cultural wonders of Indonesia's most famous island.</p>
+            <div class="flex items-center text-indigo-600 font-medium">
+              <span>Read More</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Blog Post 3 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer" onclick="openModal('modal3')">
+          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" alt="Japanese Temple" class="w-full h-48 object-cover" data-image-keyword="japan temple traditional" data-image-color="green">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <i class="fas fa-calendar-alt mr-2"></i>
+              <span>March 8, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">Temples of Kyoto</h3>
+            <p class="text-gray-600 mb-4">A spiritual journey through Japan's ancient capital and its magnificent temples.</p>
+            <div class="flex items-center text-indigo-600 font-medium">
+              <span>Read More</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Blog Post 4 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer" onclick="openModal('modal4')">
+          <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25" alt="Safari Adventure" class="w-full h-48 object-cover" data-image-keyword="africa safari wildlife" data-image-color="orange">
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <i class="fas fa-calendar-alt mr-2"></i>
+              <span>February 14, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-gray-800">African Safari Adventure</h3>
+            <p class="text-gray-600 mb-4">Witnessing the majestic wildlife of Tanzania in their natural habitat.</p>
+            <div class="flex items-center text-indigo-600 font-medium">
+              <span>Read More</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Newsletter -->
+    <!-- <section class="bg-indigo-600 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Join Our Travel Community</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Get weekly travel inspiration, tips, and exclusive content straight to your inbox.</p>
+        <div class="max-w-md mx-auto flex">
+          <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
+          <button class="bg-indigo-800 px-6 py-3 rounded-r-lg font-semibold hover:bg-indigo-900 transition">Subscribe</button>
+        </div>
+      </div>
+    </section> -->
+  
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Nguyen Trai Highschool</h3>
+            <p class="text-gray-400">Sharing my travel adventures and inspiring others to explore the world.</p>
+          </div>
+          <!-- <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Destinations</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-2xl"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-2xl"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest text-2xl"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact</h4>
+            <p class="text-gray-400 mb-2"><i class="fas fa-envelope mr-2"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85ede0e9e9eac5f2e4ebe1e0f7e9f0f6f1abe6eae8">[email&#160;protected]</a></p>
+            <p class="text-gray-400"><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</p>
+          </div> -->
+        </div> 
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <p>© 2025 Nguyen Trai Highschool. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 z-50 opacity-0 pointer-events-none">
+      <div class="modal-content bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+          <button onclick="closeModal('modal1')" class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100">
+            <i class="fas fa-times text-gray-700"></i>
+          </button>
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Swiss Alps" class="w-full h-64 md:h-96 object-cover" data-image-keyword="swiss alps mountains" data-image-color="blue">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center text-sm text-gray-500 mb-4">
+            <i class="fas fa-calendar-alt mr-2"></i>
+            <span>May 15, 2025</span>
+            <span class="mx-2">•</span>
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            <span>Switzerland</span>
+          </div>
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">Hiking the Swiss Alps</h2>
+          <div class="prose max-w-none text-gray-700 mb-6">
+            <p>My journey through the Swiss Alps was nothing short of magical. Starting in the picturesque village of Grindelwald, I embarked on a 5-day trek that would take me through some of the most stunning landscapes I've ever witnessed.</p>
+            <p class="mt-4">The first day was challenging with a steep ascent to the Faulhorn summit at 2,681 meters. The reward? A breathtaking panoramic view of the surrounding peaks and lakes that made every step worth it. I stayed overnight at the historic Faulhorn mountain hut, built in 1830, which offered cozy accommodations and delicious Swiss cheese fondue.</p>
+            <p class="mt-4">The following days brought me through flower-filled alpine meadows, past crystal-clear mountain lakes, and across thrilling suspension bridges. The highlight was reaching the Schynige Platte ridge with its famous view of the Eiger, Mönch, and Jungfrau mountains.</p>
+          </div>
+          <div class="aspect-w-16 aspect-h-9 mb-6">
+            <iframe class="w-full h-64 md:h-96" src="https://www.youtube.com/embed/3cn1nVQ4KOA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+          </div>
+          <div class="border-t border-gray-200 pt-6">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Travel Tips</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Best time to visit: June to September for hiking</li>
+              <li>Essential gear: Good hiking boots, layers for changing weather, and trekking poles</li>
+              <li>Mountain huts book up quickly - reserve in advance</li>
+              <li>Swiss Travel Pass can save money on transportation</li>
+              <li>Try the local specialties: cheese fondue and rösti</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 z-50 opacity-0 pointer-events-none">
+      <div class="modal-content bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+          <button onclick="closeModal('modal2')" class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100">
+            <i class="fas fa-times text-gray-700"></i>
+          </button>
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4" alt="Bali Beaches" class="w-full h-64 md:h-96 object-cover" data-image-keyword="bali beach tropical" data-image-color="blue">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center text-sm text-gray-500 mb-4">
+            <i class="fas fa-calendar-alt mr-2"></i>
+            <span>April 22, 2025</span>
+            <span class="mx-2">•</span>
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            <span>Bali, Indonesia</span>
+          </div>
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">Paradise Found in Bali</h2>
+          <div class="prose max-w-none text-gray-700 mb-6">
+            <p>Bali exceeded all my expectations with its perfect blend of natural beauty, rich culture, and warm hospitality. I spent two weeks exploring this Indonesian paradise, from its famous beaches to hidden waterfalls in the jungle.</p>
+            <p class="mt-4">My journey began in Ubud, the cultural heart of Bali. Here I visited the Sacred Monkey Forest, explored ancient temples like Goa Gajah, and took a traditional Balinese cooking class. The highlight was waking up at 2am to hike Mount Batur for sunrise - the view over the caldera lake was unforgettable.</p>
+            <p class="mt-4">The second week took me to Bali's stunning coastline. I discovered secret beaches in Uluwatu, surfed gentle waves in Canggu, and snorkeled with manta rays in Nusa Penida. The most magical moment was watching the sunset at Tanah Lot temple, perched dramatically on a rock in the sea.</p>
+          </div>
+          <div class="aspect-w-16 aspect-h-9 mb-6">
+            <iframe class="w-full h-64 md:h-96" src="https://www.youtube.com/embed/CMbx1vp8Y0Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+          </div>
+          <div class="border-t border-gray-200 pt-6">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Travel Tips</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Visa: Many nationalities get 30-day visa on arrival</li>
+              <li>Best areas: Ubud for culture, Uluwatu for beaches, Canggu for digital nomads</li>
+              <li>Transport: Rent a scooter or use Grab (Southeast Asia's Uber)</li>
+              <li>Must-try foods: Nasi goreng, babi guling, and fresh coconut</li>
+              <li>Respect local customs: Dress modestly at temples</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 z-50 opacity-0 pointer-events-none">
+      <div class="modal-content bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+          <button onclick="closeModal('modal3')" class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100">
+            <i class="fas fa-times text-gray-700"></i>
+          </button>
+          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" alt="Japanese Temple" class="w-full h-64 md:h-96 object-cover" data-image-keyword="japan temple traditional" data-image-color="green">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center text-sm text-gray-500 mb-4">
+            <i class="fas fa-calendar-alt mr-2"></i>
+            <span>March 8, 2025</span>
+            <span class="mx-2">•</span>
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            <span>Kyoto, Japan</span>
+          </div>
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">Temples of Kyoto</h2>
+          <div class="prose max-w-none text-gray-700 mb-6">
+            <p>Kyoto, Japan's ancient capital, is home to over 1,600 Buddhist temples and 400 Shinto shrines. My week-long pilgrimage through these sacred sites was a journey through time and spirituality.</p>
+            <p class="mt-4">I began at Kinkaku-ji, the Golden Pavilion, whose top two floors are completely covered in gold leaf. The reflection of the temple in the mirror pond was mesmerizing. Next was Ryoan-ji with its famous Zen rock garden, where I sat in meditation contemplating the 15 carefully placed rocks (one is always hidden from view).</p>
+            <p class="mt-4">The highlight was Fushimi Inari-taisha with its thousands of vermilion torii gates winding up the mountain. I hiked the entire 4km trail to the summit at dawn, passing through this seemingly endless tunnel of gates. At the top, I was rewarded with panoramic views of Kyoto and a profound sense of peace.</p>
+          </div>
+          <div class="aspect-w-16 aspect-h-9 mb-6">
+            <iframe class="w-full h-64 md:h-96" src="https://www.youtube.com/embed/6xVb-aRY4F0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+          </div>
+          <div class="border-t border-gray-200 pt-6">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Travel Tips</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Best seasons: Spring for cherry blossoms or autumn for fall colors</li>
+              <li>Get a Kyoto City Bus Pass for unlimited temple hopping</li>
+              <li>Visit popular temples early morning to avoid crowds</li>
+              <li>Try shojin ryori (Buddhist vegetarian cuisine)</li>
+              <li>Respect temple etiquette: remove shoes, no photos where prohibited</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 z-50 opacity-0 pointer-events-none">
+      <div class="modal-content bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="relative">
+          <button onclick="closeModal('modal4')" class="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100">
+            <i class="fas fa-times text-gray-700"></i>
+          </button>
+          <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25" alt="Safari Adventure" class="w-full h-64 md:h-96 object-cover" data-image-keyword="africa safari wildlife" data-image-color="orange">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center text-sm text-gray-500 mb-4">
+            <i class="fas fa-calendar-alt mr-2"></i>
+            <span>February 14, 2025</span>
+            <span class="mx-2">•</span>
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            <span>Tanzania</span>
+          </div>
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">African Safari Adventure</h2>
+          <div class="prose max-w-none text-gray-700 mb-6">
+            <p>My 10-day safari through Tanzania's Northern Circuit was the wildlife experience of a lifetime. From the vast plains of the Serengeti to the Ngorongoro Crater, I witnessed nature's most spectacular shows.</p>
+            <p class="mt-4">The adventure began in Tarangire National Park, famous for its massive elephant herds and ancient baobab trees. Watching a family of elephants interact at a watering hole, I was struck by their intelligence and social bonds. Next was Lake Manyara, where I saw tree-climbing lions lounging in acacia trees like house cats.</p>
+            <p class="mt-4">The highlight was the Serengeti during the Great Migration. I witnessed thousands of wildebeest and zebra crossing crocodile-infested rivers, with predators lurking nearby. The raw drama of life and death unfolding before my eyes was both thrilling and humbling. The trip concluded in Ngorongoro Crater, a natural amphitheater teeming with wildlife including the rare black rhino.</p>
+          </div>
+          <div class="aspect-w-16 aspect-h-9 mb-6">
+            <iframe class="w-full h-64 md:h-96" src="https://www.youtube.com/embed/5Hf8tJt7kG4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+          </div>
+          <div class="border-t border-gray-200 pt-6">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">Travel Tips</h3>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Best time: Dry season (June-October) for wildlife viewing</li>
+              <li>Pack neutral-colored clothing (no bright colors or white)</li>
+              <li>Bring binoculars and a good zoom lens for photography</li>
+              <li>Choose ethical operators that support conservation</li>
+              <li>Malaria prophylaxis is essential - consult a doctor</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      function openModal(modalId) {
+        document.getElementById(modalId).classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+  
+      function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+  
+      // Close modal when clicking outside content
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+          if (e.target === this) {
+            this.classList.remove('active');
+            document.body.style.overflow = 'auto';
+          }
+        });
+      });
+  
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.modal.active').forEach(modal => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+          });
+        }
+      });
+    </script>
+  
+  </body></html>
